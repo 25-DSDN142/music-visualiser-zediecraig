@@ -1,161 +1,229 @@
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
-var size = 100;
-var size1 = 75;
-var size2 = 50;
+
 let firstRun = true
+let y;
 
-var yPosArray = [300,200,600,400,300,700,100,300,800,400,500];
-var wPosArray = [300,200,600,400,300,700,100,300,800,400,500];
-var uPosArray = [300,200,600,400,300,700,100,300,800,400,500];
-var y;
-y = height;
+// ARRAYS
 
+  let yPosArray = [300,200,600,400,300,700,100,300,800,400,500];
+  let xPosArray = [0,100,200,300,400,500,600,700,800,900,1000];
 
-function draw_one_frame(vocal, drum, bass, other) {
-background(153, 225, 247);
+  // a=y coordinates, b= x coordinates
+  let aPosArray = [150,400,250,350,50,300,200,100,150,400,250,350,50,300,200,100,550,600,750,500,800,650,900,550,450,940,850,600];
+  let bPosArray = [50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,950,50,100,150,200,250,300,350,400,450,500,];
 
+  //i=y
+  let IPosArray = [300,200,600,400];
+  let JPosArray = [400,100,500,300];
+
+function draw_one_frame(words, vocal, drum, bass, other, counter) {
+background(49, 21, 173);
+
+let seconds = counter/60
 rectMode(CENTER)
-if (firstRun) {
-  myImage = loadImage ('Print.jpg')
+
+
+//  image coding
+if (firstRun) { 
+  myImage = loadImage ('gradient.jpg')
   myImage2 = loadImage ('frontt copy.png')
-  firstRun = false;
+  myImage3 = loadImage ('stars.png')
+  myImage4 = loadImage ('aura1.png')
+  myImage5 = loadImage ('clouds.png')
+  myImage6 = loadImage ('darkgradient.png')
+  myImage7 = loadImage ('darkergradient.png')
+  myImage8 = loadImage ('aura2.png')
 
 }
 
-image(myImage, 0, 0)
 
-strokeWeight(0);
-fill(237, 181, 130)
-drawingContext.shadowBlur = 200
-drawingContext.shadowColor = color(237, 181, 130)
+//intro
+if (seconds > 0 && seconds <68.49999999999) {
 
-
-
-ellipse(0, yPosArray [0], drum*3); 
-ellipse(100, yPosArray [1], drum*3);
-ellipse(200, yPosArray [2], drum*3); 
-ellipse(300, yPosArray [3], drum*3);
-ellipse(400, yPosArray [4], drum*3);
-ellipse(500, yPosArray [5], drum*3);
-ellipse(600, yPosArray [6], drum*3);
-ellipse(700, yPosArray [7], drum*3);
-ellipse(800, yPosArray [8], drum*3);
-ellipse(900, yPosArray [9], drum*3);
-ellipse(1000, yPosArray [10], drum*3);
+image(myImage, 0, 0)//background gradient
+image(myImage5,bass/2-90,-90)//clouds
 
 
-yPosArray [0] --;
-yPosArray [1] --;
-yPosArray [2] --;
-yPosArray [3] --;
-yPosArray [4]--;
-yPosArray [5] --;
-yPosArray [6] --;
-yPosArray [7] --;
-yPosArray [8] --;
-yPosArray [9] --;
-yPosArray [10] --;
+for(let i = 0; i < IPosArray.length; i++){ // aura
 
-fill (133, 200, 124)
 drawingContext.shadowBlur = 150
-drawingContext.shadowcolor = color(133, 200, 124)
+drawingContext.shadowcolor = color(208, 172, 175)
+image(myImage4, 0, IPosArray[i])
+
+// drawingContext.shadowBlur = 150
+// drawingContext.shadowcolor = color(208, 172, 175)
+// image(myImage4, 225, IPosArray[i])
+
+drawingContext.shadowBlur = 150
+drawingContext.shadowcolor = color(208, 172, 175)
+image(myImage4, 325, IPosArray[i])
+
+drawingContext.shadowBlur = 150
+drawingContext.shadowcolor = color(208, 172, 175)
+image(myImage8, 625, JPosArray[i])
+
+drawingContext.shadowBlur = 150
+drawingContext.shadowcolor = color(208, 172, 175)
+image(myImage8, 625, JPosArray[i])
+
+drawingContext.shadowBlur = 150
+drawingContext.shadowcolor = color(208, 172, 175)
+image(myImage8, 625, JPosArray[i])
 
 
-ellipse(0, wPosArray [0], drum*2); 
-ellipse(100, wPosArray [1], drum*2);
-ellipse(200, wPosArray [2], drum*2); 
-ellipse(300, wPosArray [3], drum*2);
-ellipse(400, wPosArray [4], drum*2);
-ellipse(500, wPosArray [5], drum*2);
-ellipse(600, wPosArray [6], drum*2);
-ellipse(700, wPosArray [7], drum*2);
-ellipse(800, wPosArray [8], drum*2);
-ellipse(900, wPosArray [9], drum*2);
-ellipse(1000, wPosArray [10], drum*2);
+IPosArray[i] --;
+  if(IPosArray[i] <0){
+    IPosArray[i] = 600
+  }
 
-
-wPosArray [0] --;
-wPosArray [1] --;
-wPosArray [2] --;
-wPosArray [3] --;
-wPosArray [4]--;
-wPosArray [5] --;
-wPosArray [6] --;
-wPosArray [7] --;
-wPosArray [8] --;
-wPosArray [9] --;
-wPosArray [10] --;
-
-fill (98, 122, 188)
-drawingContext.shadowBlur = 100
-drawingContext.shadowcolor = color(98, 122, 188)
-
-ellipse(0, uPosArray [0], drum); 
-ellipse(100, uPosArray [1], drum);
-ellipse(200, uPosArray [2], drum); 
-ellipse(300, uPosArray [3], drum);
-ellipse(400, uPosArray [4], drum);
-ellipse(500, uPosArray [5], drum);
-ellipse(600, uPosArray [6], drum);
-ellipse(700, uPosArray [7], drum);
-ellipse(800, uPosArray [8], drum);
-ellipse(900, uPosArray [9], drum);
-ellipse(1000, uPosArray [10], drum);
-
-uPosArray [0] --;
-uPosArray [1] --;
-uPosArray [2] --;
-uPosArray [3] --;
-uPosArray [4]--;
-uPosArray [5] --;
-uPosArray [6] --;
-uPosArray [7] --;
-uPosArray [8] --;
-uPosArray [9] --;
-uPosArray [10] --;
-
-
-fill(237, 181, 130)
-drawingContext.shadowBlur = 100
-drawingContext.shadowcolor = color(98, 122, 188)
-
-for (let iii = 0; iii < 10;iii++){
-  ellipse(iii*vocal,200, 70, 70)
 }
 
 
-var bassMap = map(bass,0,75,10,70);
+for(let i = 0; i < aPosArray.length; i++){ // smaller pink cicles
+  strokeWeight(0);
+
+  fill(224, 213, 167);
+  drawingContext.shadowBlur = 200;
+  drawingContext.shadowColor = color(224, 213, 167);
+  ellipse(bPosArray[i], aPosArray[i], bass/1.52); 
+
+  fill (208, 172, 175);
+  drawingContext.shadowBlur = 150;
+  drawingContext.shadowcolor = color(208, 172, 175);
+   ellipse(bPosArray[i], aPosArray[i], bass/2);
+
+  fill (237, 97, 101);
+  drawingContext.shadowBlur = 150;
+  drawingContext.shadowcolor = color(237, 97, 101);
+  ellipse(bPosArray[i], aPosArray[i], bass/3);
+
+  aPosArray[i] --;
+  if(aPosArray[i] < -50){
+    aPosArray[i] = height+50
+  }
+}
+
+for(let i = 0; i < yPosArray.length; i++){ //orange, green & blue circles adjusting to the drums
+  strokeWeight(0);
+
+  fill(243, 177, 144);//orange
+  drawingContext.shadowBlur = 200;
+  drawingContext.shadowColor = color(243, 177, 144);
+  ellipse(xPosArray[i], yPosArray[i], vocal); 
+
+  fill (234, 160, 147);//green
+  drawingContext.shadowBlur = 150;
+  drawingContext.shadowcolor = color(234, 160, 147);
+  ellipse(xPosArray[i], yPosArray[i], vocal/1.5);
+
+  fill (243, 115, 108);//
+  drawingContext.shadowBlur = 100;
+  drawingContext.shadowcolor = color(243, 115, 108);
+  ellipse(xPosArray[i], yPosArray[i], vocal/2);
+
+  yPosArray[i] --;
+  if(yPosArray[i] < -50){
+    yPosArray[i] = height+50
+  }
+}
+
+image(myImage2,0,0)// front hills 
+}
+
+
+//chorus
+if (seconds > 68.5 && seconds <174); {
+
+
+image(myImage6,bass/8,0);//dark gradient
+image(myImage3,bass/8-30,0);//stars
+
+for(let i = 0; i < aPosArray.length; i++){ // smaller pink cicles
+  strokeWeight(0);
+
+  fill(186, 69, 112);//hotpink
+  drawingContext.shadowBlur = 200;
+  drawingContext.shadowColor = color(186, 69, 112);
+  ellipse(bPosArray[i], aPosArray[i], bass/1.5); 
+
+  fill (219, 134, 7);//orange
+  drawingContext.shadowBlur = 150;
+  drawingContext.shadowcolor = color(219, 134, 7);
+  ellipse(bPosArray[i], aPosArray[i], bass/2);
+
+  fill (250, 229, 92);//yellow
+  drawingContext.shadowBlur = 150;
+  drawingContext.shadowcolor = color(250, 229, 92);
+  ellipse(bPosArray[i], aPosArray[i], bass/3);
+
+  aPosArray[i] --;
+  if(aPosArray[i] < -50){
+    aPosArray[i] = height+50;
+  }
+}
+
+for(let i = 0; i < yPosArray.length; i++){ //orange, green & blue circles adjusting to the drums
+  strokeWeight(0);
+
+  fill(194, 89, 182);
+  drawingContext.shadowBlur = 200;
+  drawingContext.shadowColor = color(194, 89, 182);
+
+  ellipse(xPosArray[i], yPosArray[i], vocal*2); 
+
+  fill (92, 78, 163);
+  drawingContext.shadowBlur = 150;
+  drawingContext.shadowcolor = color(92, 78, 163);
+
+  ellipse(xPosArray[i], yPosArray[i], vocal);
+
+  fill (125, 169, 209);
+  drawingContext.shadowBlur = 100;
+  drawingContext.shadowcolor = color(125, 169, 209);
+
+  ellipse(xPosArray[i], yPosArray[i], vocal/2);
+
+  yPosArray[i] --;
+  if(yPosArray[i] < -50){
+    yPosArray[i] = height+50
+  }
+}
+
+image(myImage2,0,0);// front hills 
+
+
+}
+
+
+// outro
+if (seconds > 174 && seconds <227.9999999999) {
+image(myImage7,0,0)// front hills 
+var bassMap = map(bass,40,100,200,90);
 
 for (var ii = 1; ii <= 3; ii++){ 
-  var yStep = ii * 50
-  for (var i = 1; i <= 5; i ++) {
+  var yStep = ii * 130
+   for (var i = 3; i <= 8; i ++) {
 
-    ellipse(175 * i, yStep, bassMap);
-    
-  }
+     ellipse(85 * i, yStep, bassMap);
+    [i]
+   }
+
 }
 
-image(myImage2,0,0)
-
-
-  }
-
-
-// rectMode(CENTER)     
-
-// stroke(bass,20,100);
-// fill(drum,150,150)
-
-
-  // let drumMap = map(vocal, 0,100 ,30,90);//parseInt
-  // let lengthOfrect = 10;
-  // let rectY = 200;
-  // let rectX = 100;
-
-  // for(let i=1; i <= drum; i++){
-  //  let rectstep = i*drum;
-  //  rect(rectstep, rectY, 3,vocal)
+// if (seconds > 228 && seconds <228) {
 
 
 
+
+// }
+}
+
+// textFont(font);
+textSize(vocal);
+textStyle(BOLD);
+fill(208, 171, 159);
+text(words, 50, 500);
+
+
+}
