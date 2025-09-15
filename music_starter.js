@@ -20,7 +20,7 @@ let seconds = counter/60
 rectMode(CENTER)
 
 
-//  image coding
+// Image coding
 if (firstRun) { 
   myImage1 = loadImage ('gradient.png');
   myImage2 = loadImage ('hills.png');
@@ -38,7 +38,7 @@ if (firstRun) {
 }
 
 
-//intro
+//Intro
 if (seconds > 0 && seconds <68.4999999999) {
 
 image(myImage1, 0, 0); // background gradient
@@ -139,7 +139,7 @@ image(myImage2,0,0)// front hills
 }
 
 
-//chorus
+//Chorus
 if (seconds > 68.5 && seconds <173.49999999999) {
 
 
@@ -201,7 +201,7 @@ image(myImage2,0,0);// front hills
 }
 
 
-//outro
+//Outro
 if (seconds > 173.5 && seconds <191.9999999999) {
 image(myImage9,0,0)// gradient4
 
