@@ -44,96 +44,96 @@ if (seconds > 0 && seconds <68.4999999999) {
 image(myImage1, 0, 0); // background gradient
 image(myImage5,bass/2 - 90, -90); // clouds
 
-// // Aura1 movement
-// yOffset -= 1.5;
+// Aura1 movement
+yOffset -= 1.5;
 
-//   if (yOffset <= -myImage4.height) {
-//     yOffset = 0;
-//   }
-
-
-//     for (let y = yOffset; y < height; y += myImage4.height) {
-//     image(myImage4, 20, y+100);
-//   }
-
-//     for (let y = yOffset; y < height; y += myImage4.height) {
-//     image(myImage4, 500, y+200);
-//   }
-
-//     for (let y = yOffset; y < height; y += myImage4.height) {
-//     image(myImage4, 330, y-200);
-//   }
+  if (yOffset <= -myImage4.height) {
+    yOffset = 0;
+  }
 
 
+    for (let y = yOffset; y < height; y += myImage4.height) {
+    image(myImage4, 20, y+100);
+  }
+
+    for (let y = yOffset; y < height; y += myImage4.height) {
+    image(myImage4, 500, y+200);
+  }
+
+    for (let y = yOffset; y < height; y += myImage4.height) {
+    image(myImage4, 330, y-200);
+  }
 
 
-// yOffset -= 1.5;
-
-//   if (yOffset <= -myImage8.height) {
-//     yOffset = 0;
-//   }
 
 
-//     for (let y = yOffset; y < height; y += myImage4.height) {
-//     image(myImage8, 20, y+100);
-//   }
+yOffset -= 1.5;
 
-//     for (let y = yOffset; y < height; y += myImage4.height) {
-//     image(myImage8, 500, y+200);
-//   }
-
-//     for (let y = yOffset; y < height; y += myImage4.height) {
-//     image(myImage8, 330, y-200);
-//   }
+  if (yOffset <= -myImage8.height) {
+    yOffset = 0;
+  }
 
 
-// for(let i = 0; i < aPosArray.length; i++){ // smaller pink/cream cicles
-//   strokeWeight(0);
+    for (let y = yOffset; y < height; y += myImage4.height) {
+    image(myImage8, 20, y+100);
+  }
 
-//   fill(224, 213, 167);
-//   drawingContext.shadowBlur = 200;
-//   drawingContext.shadowColor = color(224, 213, 167);
-//   ellipse(bPosArray[i], aPosArray[i], bass/1.52); 
+    for (let y = yOffset; y < height; y += myImage4.height) {
+    image(myImage8, 500, y+200);
+  }
 
-//   fill (208, 172, 175);
-//   drawingContext.shadowBlur = 150;
-//   drawingContext.shadowColor = color(208, 172, 175);
-//    ellipse(bPosArray[i], aPosArray[i], bass/2);
+    for (let y = yOffset; y < height; y += myImage4.height) {
+    image(myImage8, 330, y-200);
+  }
 
-//   fill (237, 97, 101);
-//   drawingContext.shadowBlur = 150;
-//   drawingContext.shadowColor = color(237, 97, 101);
-//   ellipse(bPosArray[i], aPosArray[i], bass/3);
 
-//   aPosArray[i] --;
-//   if(aPosArray[i] < -50){
-//     aPosArray[i] = height+50
-//   }
-// }
+for(let i = 0; i < aPosArray.length; i++){ // smaller pink/cream cicles
+  strokeWeight(0);
 
-// for(let i = 0; i < yPosArray.length; i++){ //orange, green & blue circles adjusting to the drums
-//   strokeWeight(0);
+  fill(224, 213, 167);
+  drawingContext.shadowBlur = 200;
+  drawingContext.shadowColor = color(224, 213, 167);
+  ellipse(bPosArray[i], aPosArray[i], bass/1.52); 
 
-//   fill(243, 177, 144);//orange
-//   drawingContext.shadowBlur = 200;
-//   drawingContext.shadowColor = color(243, 177, 144);
-//   ellipse(xPosArray[i], yPosArray[i], vocal); 
+  fill (208, 172, 175);
+  drawingContext.shadowBlur = 150;
+  drawingContext.shadowColor = color(208, 172, 175);
+   ellipse(bPosArray[i], aPosArray[i], bass/2);
 
-//   fill (234, 160, 147);//green
-//   drawingContext.shadowBlur = 150;
-//   drawingContext.shadowColor = color(234, 160, 147);
-//   ellipse(xPosArray[i], yPosArray[i], vocal/1.5);
+  fill (237, 97, 101);
+  drawingContext.shadowBlur = 150;
+  drawingContext.shadowColor = color(237, 97, 101);
+  ellipse(bPosArray[i], aPosArray[i], bass/3);
 
-//   fill (243, 115, 108);//
-//   drawingContext.shadowBlur = 100;
-//   drawingContext.shadowColor = color(243, 115, 108);
-//   ellipse(xPosArray[i], yPosArray[i], vocal/2);
+  aPosArray[i] --;
+  if(aPosArray[i] < -50){
+    aPosArray[i] = height+50
+  }
+}
 
-//   yPosArray[i] --;
-//   if(yPosArray[i] < -50){
-//     yPosArray[i] = height+50
-//   }
-// }
+for(let i = 0; i < yPosArray.length; i++){ //orange, green & blue circles adjusting to the drums
+  strokeWeight(0);
+
+  fill(243, 177, 144);//orange
+  drawingContext.shadowBlur = 200;
+  drawingContext.shadowColor = color(243, 177, 144);
+  ellipse(xPosArray[i], yPosArray[i], vocal); 
+
+  fill (234, 160, 147);//green
+  drawingContext.shadowBlur = 150;
+  drawingContext.shadowColor = color(234, 160, 147);
+  ellipse(xPosArray[i], yPosArray[i], vocal/1.5);
+
+  fill (243, 115, 108);//
+  drawingContext.shadowBlur = 100;
+  drawingContext.shadowColor = color(243, 115, 108);
+  ellipse(xPosArray[i], yPosArray[i], vocal/2);
+
+  yPosArray[i] --;
+  if(yPosArray[i] < -50){
+    yPosArray[i] = height+50
+  }
+}
 
 image(myImage2,0,0)// front hills 
 }
@@ -201,92 +201,92 @@ image(myImage2,0,0);// front hills
 }
 
 
-// outro
+//outro
 if (seconds > 173.5 && seconds <191.9999999999) {
 image(myImage9,0,0)// gradient4
 
 strokeWeight(0)
 
 fill(255, 221, 171);
-ellipse(120, 135, bass, bass);
+ellipse(120, 135, drum, drum);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 221, 171);
 
 fill(255, 209, 140);
-ellipse(120,135, bass/1.5, bass/1.5);
+ellipse(120,135, drum/1.5, drum/1.5);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 209, 140);
 
 fill(255, 205, 130);
-ellipse(120, 135, bass/4, bass/4);
+ellipse(120, 135, drum/4, drum/4);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 205, 130);
 
 
 
 fill(255, 221, 171);
-ellipse(840, 135, bass, bass);
+ellipse(840, 135, drum, drum);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 221, 171);
 
 fill(255, 209, 140);
-ellipse(840,135, bass/1.5, bass/1.5);
+ellipse(840,135, drum/1.5, drum/1.5);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 209, 140);
 
 fill(255, 205, 130);
-ellipse(840, 135, bass/4, bass/4);
+ellipse(840, 135, drum/4, drum/4);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 205, 130);
 
 
 
 fill(255, 221, 171);
-ellipse(840, 405, bass, bass);
+ellipse(840, 405, drum, drum);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 221, 171);
 
 fill(255, 209, 140);
-ellipse(840,405, bass/1.5, bass/1.5);
+ellipse(840,405, drum/1.5, drum/1.5);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 209, 140);
 
 fill(255, 205, 130);
-ellipse(840, 405, bass/4, bass/4);
+ellipse(840, 405, drum/4, drum/4);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 205, 130);
 
 
 
 fill(255, 221, 171);
-ellipse(840, 135, bass, bass);
+ellipse(840, 135, drum, drum);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 221, 171);
 
 fill(255, 209, 140);
-ellipse(840,135, bass/1.5, bass/1.5);
+ellipse(840,135, drum/1.5, drum/1.5);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 209, 140);
 
 fill(255, 205, 130);
-ellipse(840, 135, bass/4, bass/4);
+ellipse(840, 135, drum/4, drum/4);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 205, 130);
 
 
 
 fill(255, 221, 171);
-ellipse(120, 405, bass, bass);
+ellipse(120, 405, drum, drum);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 221, 171);
 
 fill(255, 209, 140);
-ellipse(120,405, bass/1.5, bass/1.5);
+ellipse(120,405, drum/1.5, drum/1.5);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 209, 140);
 
 fill(255, 205, 130);
-ellipse(120, 405, bass/4, bass/4);
+ellipse(120, 405, drum/4, drum/4);
 drawingContext.shadowBlur = 200;
 drawingContext.shadowColor = color(255, 205, 130);
 
